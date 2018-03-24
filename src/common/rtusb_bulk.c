@@ -1698,7 +1698,7 @@ VOID	RTUSBCancelPendingBulkOutIRP(
 	pAd->BulkOutPending[MGMTPIPEIDX] = FALSE;
 	/*RTMP_IRQ_UNLOCK(pLock, IrqFlags);*/
 
-	pNullContext = &(pAd->NullContext);
+	pNullContext = (pAd->NullContext);
 	if (pNullContext->IRPPending == TRUE)
 		RTUSB_UNLINK_URB(pNullContext->pUrb);
 

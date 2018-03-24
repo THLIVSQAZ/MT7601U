@@ -3331,7 +3331,7 @@ VOID MT7601_Init(RTMP_ADAPTER *pAd)
 	pChipOps->SetRxAnt = MT7601SetRxAnt;
 
 
-	pChipOps->DisableTxRx = MT7601DisableTxRx;
+	pChipOps->DisableTxRx = (NTSTATUS)MT7601DisableTxRx;
 
 #ifdef RTMP_USB_SUPPORT
 	pChipOps->AsicRadioOn = MT7601UsbAsicRadioOn;

@@ -3487,7 +3487,7 @@ VOID ATEAsicTemperCompensation(
 	PATE_INFO pATEInfo = &(pAd->ate);
 
 	if (pATEInfo->pChipStruct->TemperCompensation!= NULL)
-		pATEInfo->pChipStruct->TemperCompensation(pAd);
+		pATEInfo->pChipStruct->TemperCompensation(&pAd);
 
 	return;
 }
@@ -4306,7 +4306,7 @@ INT Set_ATE_Load_E2P_From_Buf_Proc(
 	if (value > 0)
 	{
 
-		rt_ee_write_all(pAd, pAd->EEPROMImage);
+		rt_ee_write_all(pAd, *pAd->EEPROMImage);
 		ret = TRUE;
 	
 	}

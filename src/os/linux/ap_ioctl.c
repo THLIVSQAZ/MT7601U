@@ -313,7 +313,7 @@ INT rt28xx_ap_ioctl(
 			DBGPRINT(RT_DEBUG_TRACE,("ioctl SIOCSIWGENIE length=%d, pointer=%x\n", wrqin->u.data.length, wrqin->u.data.pointer));
 
 
-			RTMP_AP_IoctlHandle(pAd, wrqin, CMD_RTPRIV_IOCTL_AP_SIOCSIWGENIE, 0, NULL, 0);
+			RTMP_AP_IoctlHandle(pAd, wrq, CMD_RTPRIV_IOCTL_AP_SIOCSIWGENIE, 0, NULL, 0);
 			break;
 #endif /* HOSTAPD_SUPPORT */
 

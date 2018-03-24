@@ -906,7 +906,7 @@ struct _ATE_CHIP_STRUCT MT7601ATE =
 	//.AsicExtraPowerOverMAC = DefaultATEAsicExtraPowerOverMAC,
 	.Set_BW_Proc = MT7601_Set_ATE_TX_BW_Proc,
 	.Set_FREQ_OFFSET_Proc = MT7601_Set_ATE_TX_FREQ_OFFSET_Proc,
-	.TemperCompensation = MT7601ATEAsicTemperatureCompensation,
+	.TemperCompensation = (void *)MT7601ATEAsicTemperatureCompensation,
 
 	/* variables */
 	.maxTxPwrCnt = 5,

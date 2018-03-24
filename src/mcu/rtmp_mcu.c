@@ -30,7 +30,7 @@
 
 INT MCUBurstWrite(PRTMP_ADAPTER pAd, UINT32 Offset, UINT32 *Data, UINT32 Cnt)
 {
-	RTUSBMultiWrite_nBytes(pAd, Offset, Data, Cnt * 4, 64); 
+	RTUSBMultiWrite_nBytes(pAd, Offset, *Data, Cnt * 4, 64); 
 }
 
 INT MCURandomWrite(PRTMP_ADAPTER pAd, RTMP_REG_PAIR *RegPair, UINT32 Num)
@@ -62,15 +62,15 @@ VOID ChipOpsMCUHook(PRTMP_ADAPTER pAd, enum MCU_TYPE MCUType)
 		pChipOps->loadFirmware = USBLoadFirmwareToAndes;
 #endif
 		//pChipOps->sendCommandToMcu = AsicSendCmdToAndes;
-		pChipOps->Calibration = AndesCalibrationOP;
+		pChipOps->Calibration = (int)(*AndesCalibrationOP);
 		pChipOps->BurstWrite =  AndesBurstWrite;
 		pChipOps->BurstRead = AndesBurstRead;
 		pChipOps->RandomRead = AndesRandomRead;
 		pChipOps->RFRandomRead = AndesRFRandomRead;
 		pChipOps->ReadModifyWrite = AndesReadModifyWrite;
 		pChipOps->RFReadModifyWrite = AndesRFReadModifyWrite;
-		pChipOps->RandomWrite = AndesRandomWrite;
-		pChipOps->RFRandomWrite = AndesRFRandomWrite;
+		pChipOps->RandomWrite = AndesRandomWritePair;
+		pChipOps->RFRandomWrite = AndesRFRandomWritePair;
 		pChipOps->PwrSavingOP = AndesPwrSavingOP;
 	}
 #endif

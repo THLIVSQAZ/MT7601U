@@ -552,7 +552,7 @@ INT ATEResetBulkOut(
 	IN PRTMP_ADAPTER	pAd)
 {
 	PATE_INFO pATEInfo = &(pAd->ate);
-	PTX_CONTEXT	pNullContext = &(pAd->NullContext);
+	PTX_CONTEXT	pNullContext = (pAd->NullContext);
 	INT ret=0;
 
 	pNullContext->IRPPending = TRUE;

@@ -547,7 +547,7 @@ NDIS_STATUS	RTMPAllocTxRxRingMemory(
 	IN	PRTMP_ADAPTER	pAd)
 {	
 	NDIS_STATUS Status = NDIS_STATUS_FAILURE;
-	PTX_CONTEXT pNullContext   = &(pAd->NullContext);
+	PTX_CONTEXT pNullContext   = (pAd->NullContext);
 	PTX_CONTEXT pPsPollContext = &(pAd->PsPollContext);
 	PCMD_RSP_CONTEXT pCmdRspEventContext = &(pAd->CmdRspEventContext);
 	INT i, acidx;
