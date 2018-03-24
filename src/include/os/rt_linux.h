@@ -56,6 +56,7 @@
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,27)
 #include <linux/pid.h>
+#include <linux/sched/signal.h>
 #endif
 
 #ifdef RT_CFG80211_SUPPORT
